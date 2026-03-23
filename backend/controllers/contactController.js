@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Contact = require("../models/Contact");
+const Contact = require("../models/contact");
 exports.createContact = async (req,res)=>{
 
 try{
