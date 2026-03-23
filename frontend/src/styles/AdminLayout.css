@@ -1,0 +1,22 @@
+.admin-layout{
+display:flex;
+min-height:100vh;
+background:#f4f6f9;
+}
+
+/* MAIN AREA */
+
+.admin-main{
+flex:1;
+margin-left:70px;
+display:flex;
+flex-direction:column;
+transition:0.3s;
+}
+
+/* CONTENT */
+
+.admin-content{
+padding:25px;
+flex:1;
+}

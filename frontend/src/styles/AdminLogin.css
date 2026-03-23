@@ -1,0 +1,100 @@
+.admin-login-page{
+
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#f5f6fa;
+
+}
+
+/* CARD */
+
+.admin-login-card{
+
+background:white;
+padding:40px;
+width:380px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+
+}
+
+.admin-login-card h2{
+margin-bottom:25px;
+color:#111;
+}
+
+/* FORM */
+
+.admin-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+/* INPUTS */
+
+.admin-form input{
+
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+outline:none;
+transition:0.3s;
+
+}
+
+.admin-form input:focus{
+border-color:#c9a227;
+}
+
+/* BUTTON */
+
+.admin-form button{
+
+padding:12px;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:15px;
+transition:0.3s;
+
+}
+
+.admin-form button:hover{
+background:#c9a227;
+}
+
+/* CREATE ADMIN BUTTON */
+
+.create-admin-btn{
+
+margin-top:20px;
+padding:10px;
+background:#c9a227;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+
+}
+
+.create-admin-btn:hover{
+opacity:0.9;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:500px){
+
+.admin-login-card{
+width:90%;
+padding:30px;
+}
+
+}

@@ -1,0 +1,114 @@
+.contact-page{
+padding:80px 10%;
+background:#f8f8f8;
+min-height:80vh;
+}
+
+.contact-title{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+color:#111;
+}
+
+/* LAYOUT */
+
+.contact-wrapper{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+/* FORM */
+
+.contact-form{
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+outline:none;
+transition:0.3s;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+border-color:#c9a227;
+
+}
+
+/* BUTTON */
+
+.contact-form button{
+
+padding:13px;
+background:#0f172a;
+color:white;
+border:none;
+border-radius:6px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+.contact-form button:hover{
+background:#c9a227;
+}
+
+/* INFO CARD */
+
+.contact-info{
+
+background:#0f172a;
+color:white;
+padding:35px;
+border-radius:10px;
+
+}
+
+.contact-info h3{
+margin-bottom:25px;
+font-size:22px;
+}
+
+.info-item{
+margin-bottom:20px;
+}
+
+.info-item strong{
+display:block;
+margin-bottom:5px;
+color:#c9a227;
+}
+
+/* SUCCESS */
+
+.success{
+color:green;
+margin-top:10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.contact-wrapper{
+grid-template-columns:1fr;
+}
+
+}

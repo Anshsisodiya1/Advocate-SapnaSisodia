@@ -1,0 +1,78 @@
+.consultation-section{
+text-align:center;
+}
+
+.consultation-section h2{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.consultation-text{
+color:#555;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+/* FORM */
+
+.consultation-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+/* INPUTS */
+
+.consultation-form input,
+.consultation-form select,
+.consultation-form textarea{
+
+padding:12px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+outline:none;
+transition:0.3s;
+}
+
+.consultation-form input:focus,
+.consultation-form select:focus,
+.consultation-form textarea:focus{
+border-color:#c9a227;
+box-shadow:0 0 5px rgba(201,162,39,0.4);
+}
+
+/* BUTTON */
+
+.consultation-btn{
+padding:12px;
+background:#0f172a;
+color:#fff;
+border:none;
+border-radius:6px;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.consultation-btn:hover{
+background:#c9a227;
+}
+
+/* SUCCESS MESSAGE */
+
+.success-message{
+margin-top:15px;
+color:green;
+font-weight:500;
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.consultation-section h2{
+font-size:22px;
+}
+
+}

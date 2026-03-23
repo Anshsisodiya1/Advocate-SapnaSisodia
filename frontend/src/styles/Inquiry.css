@@ -1,0 +1,109 @@
+.inquiry-container {
+  padding: 30px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+.inquiry-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.no-data {
+  padding: 20px;
+  font-size: 16px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.inquiry-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inquiry-table thead {
+  background: #1e293b;
+  color: white;
+}
+
+.inquiry-table th {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.inquiry-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.inquiry-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.message {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .inquiry-title {
+    font-size: 22px;
+  }
+
+  .inquiry-table th,
+  .inquiry-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .message {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .inquiry-container {
+    padding: 15px;
+  }
+
+  .inquiry-table th,
+  .inquiry-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

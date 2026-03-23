@@ -1,0 +1,96 @@
+.blogs-page{
+padding:20px;
+}
+
+.blogs-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+/* BUTTONS */
+
+.primary-btn{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.edit-btn{
+background:#16a34a;
+color:white;
+border:none;
+padding:6px 10px;
+margin-right:6px;
+border-radius:4px;
+cursor:pointer;
+}
+
+.delete-btn{
+background:#dc2626;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:4px;
+cursor:pointer;
+}
+
+.back-btn{
+margin-bottom:20px;
+background:none;
+border:none;
+cursor:pointer;
+font-size:14px;
+}
+
+/* TABLE */
+
+.table-card{
+background:white;
+border-radius:10px;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+overflow:hidden;
+}
+
+.blogs-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.blogs-table th{
+background:#f1f5f9;
+padding:12px;
+text-align:left;
+}
+
+.blogs-table td{
+padding:12px;
+border-top:1px solid #e5e7eb;
+}
+
+/* FORM */
+
+.form-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+max-width:700px;
+}
+
+.blog-form input,
+.blog-form textarea{
+width:100%;
+padding:10px;
+margin-bottom:14px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+.blog-form textarea{
+height:140px;
+}
