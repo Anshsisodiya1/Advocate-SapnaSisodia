@@ -7,14 +7,13 @@ export default function WhatsAppButton(){
 
 const [url,setUrl] = useState("");
 
-useEffect(()=>{
-
-axios.get("http://localhost:5000/api/whatsapp")
-.then(res=>{
-setUrl(res.data.url);
-});
-
-},[]);
+useEffect(() => {
+  axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/whatsapp`)
+    .then(res => {
+      setUrl(res.data.url);
+    })
+    .catch(err => console.log(err));
+}, []);
 
 const openWhatsApp = ()=>{
 if(url){

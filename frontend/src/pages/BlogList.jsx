@@ -9,15 +9,15 @@ const [blogs,setBlogs] = useState([]);
 
 useEffect(()=>{
 
-axios.get("http://localhost:5000/api/blogs")
-.then(res=>{
-setBlogs(res.data);
-})
-.catch(err=>{
-console.log(err);
-});
-
-},[]);
+useEffect(() => {
+  axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/blogs`)
+    .then(res => {
+      setBlogs(res.data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}, []);
 
 return(
 

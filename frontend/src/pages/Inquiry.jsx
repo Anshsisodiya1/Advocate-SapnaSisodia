@@ -10,16 +10,16 @@ const Inquiry = () => {
     fetchContacts();
   }, []);
 
-  const fetchContacts = async () => {
-    try {
-      const { data } = await axios.get("http://localhost:5000/api/contacts/all");
-      if (data.success) setContacts(data.data);
-    } catch (error) {
-      console.error("Error fetching contacts:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+const fetchContacts = async () => {
+  try {
+    const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/contacts/all`);
+    if (data.success) setContacts(data.data);
+  } catch (error) {
+    console.error("Error fetching contacts:", error);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this inquiry?")) return;

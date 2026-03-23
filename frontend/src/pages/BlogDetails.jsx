@@ -11,17 +11,15 @@ function BlogDetail(){
 const {slug} = useParams();
 const [blog,setBlog] = useState(null);
 
-useEffect(()=>{
-
-axios.get(`http://localhost:5000/api/blogs/${slug}`)
-.then(res=>{
-setBlog(res.data);
-})
-.catch(err=>{
-console.log(err);
-});
-
-},[slug]);
+useEffect(() => {
+  axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/blogs/${slug}`)
+    .then(res => {
+      setBlog(res.data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}, [slug]);
 
 if(!blog) return <p className="loading">Loading...</p>;
 
