@@ -2,7 +2,7 @@
 const Blog = require("../models/Blog");
 const Booking = require("../models/Booking");
 const Inquiry = require("../models/Inquiry");
-const Contact = require("../models/Contact");
+const Contact = require("../models/contact");
 
 exports.getDashboardStats = async (req, res) => {
   try {
