@@ -8,7 +8,7 @@ export default function WhatsAppButton(){
 const [url,setUrl] = useState("");
 
 useEffect(() => {
-  axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/whatsapp`)
+ axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/whatsapp`)
     .then(res => {
       setUrl(res.data.url);
     })
