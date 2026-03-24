@@ -24,19 +24,19 @@ export default function Home() {
 
       {/* ✅ SEO META TAGS */}
       <Helmet>
-        <title>Advocate Sapna Sisodiya | Best Lawyer in Bhopal | Legal Consultation</title>
+        <title>Advocate Sapna Sisodia | Best Lawyer in Bhopal | Legal Consultation</title>
 
         <meta
           name="description"
-          content="Advocate Sapna Sisodiya is a senior legal associate offering expert services in civil, corporate, family, and real estate law in Bhopal. Book legal consultation today."
+          content="Advocate Sapna Sisodia is a senior legal associate offering expert services in civil, corporate, family, and real estate law in Bhopal. Book legal consultation today."
         />
 
         <meta
           name="keywords"
-          content="Advocate Sapna Sisodiya, lawyer in Bhopal, legal consultation, civil lawyer, corporate lawyer India, family lawyer Bhopal"
+          content="Advocate Sapna Sisodia, lawyer in Bhopal, legal consultation, civil lawyer, corporate lawyer India, family lawyer Bhopal"
         />
 
-        <meta name="author" content="Sapna Sisodiya" />
+        <meta name="author" content="Sapna Sisodia" />
       </Helmet>
 
       {/* HERO SECTION */}
@@ -45,13 +45,13 @@ export default function Home() {
 
         <div className="hero-text">
 
-          {/* ✅ MAIN KEYWORD IN H1 */}
-          <h1>Advocate Sapna Sisodiya – Senior Legal Associate & Lawyer in Bhopal</h1>
+          {/*  MAIN KEYWORD IN H1 */}
+          <h1>Advocate Sapna Sisodia – Senior Legal Associate & Lawyer in Bhopal</h1>
 
           <h3>Corporate & Civil Law Expert</h3>
 
           <p>
-            Advocate Sapna Sisodiya is a highly experienced legal professional with more than 8 years of courtroom experience,
+            Advocate Sapna Sisodia is a highly experienced legal professional with more than 8 years of courtroom experience,
             providing professional legal representation across corporate, real estate, revenue, family, and civil law matters in Bhopal.
           </p>
 
@@ -62,7 +62,7 @@ export default function Home() {
         </div>
 
         <div className="hero-image">
-          <img src="/sapna.jpg" alt="Advocate Sapna Sisodiya Lawyer in Bhopal" />
+          <img src="/sapna.jpg" alt="Advocate Sapna Sisodia Lawyer in Bhopal" />
         </div>
 
       </section>
@@ -72,10 +72,10 @@ export default function Home() {
 
       <section className="about">
 
-        <h2>About Advocate Sapna Sisodiya</h2>
+        <h2>About Advocate Sapna Sisodia</h2>
 
         <p>
-          Advocate Sapna Sisodiya is a seasoned legal professional with extensive
+          Advocate Sapna Sisodia is a seasoned legal professional with extensive
           experience in litigation, legal drafting, and corporate compliance.
           She currently serves as a Senior Legal Associate at Juris Consultus
           Law Firm.
@@ -94,7 +94,7 @@ export default function Home() {
 
       <section className="practice">
 
-        <h2>Legal Services Offered by Advocate Sapna Sisodiya</h2>
+        <h2>Legal Services Offered by Advocate Sapna Sisodia</h2>
 
         <div className="practice-grid">
 
@@ -143,7 +143,7 @@ export default function Home() {
 
       <section className="experience">
 
-        <h2>Professional Experience of Advocate Sapna Sisodiya</h2>
+        <h2>Professional Experience of Advocate Sapna Sisodia</h2>
 
         <ul>
 
@@ -207,12 +207,12 @@ export default function Home() {
 
       <section className="location">
 
-        <h2>Office Location – Advocate Sapna Sisodiya</h2>
+        <h2>Office Location – Advocate Sapna Sisodia</h2>
 
         <div className="map-container">
 
           <iframe
-            title="Office Location of Advocate Sapna Sisodiya in Bhopal"
+            title="Office Location of Advocate Sapna Sisodia in Bhopal"
             src="https://maps.google.com/maps?q=HIG%20202%20Vijay%20Stambh%20MP%20Nagar%20Zone%201%20Bhopal%20Madhya%20Pradesh%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
             loading="lazy"
           ></iframe>
