@@ -14,7 +14,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://advocate-sapna-sisodia.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 app.use(helmet());
 app.use(morgan('dev'));
@@ -23,7 +28,7 @@ app.use(morgan('dev'));
 const contactRoutes = require('./routes/contactRoutes');
 const authRoutes = require("./routes/authRoutes");
 const blogRoutes = require("./routes/blogRoutes");
-// const bookingRoutes = require("./routes/bookingRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 const inquiryRoutes = require("./routes/inquiryRoutes");
 const limiter = require("./middleware/rateLimiter");
 const whatsappRoutes = require("./routes/whatsappRoutes");
@@ -37,7 +42,7 @@ const adminRoutes = require("./routes/adminRoutes");
 app.use('/api/contacts', contactRoutes);
 app.use("/api/admin/auth",authRoutes);
 app.use("/api/blogs",blogRoutes);
-// app.use("/api/bookings",bookingRoutes);
+app.use("/api/bookings",bookingRoutes);
 app.use("/api/inquiries",inquiryRoutes);
 app.use(limiter);
 app.use("/api/whatsapp",whatsappRoutes);

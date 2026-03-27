@@ -62,7 +62,7 @@ export default function Contact() {
 
     <div className="contact-page">
 
-      {/* ✅ SEO META TAGS */}
+      {/* SEO META TAGS */}
       <Helmet>
         <title>Contact Advocate Sapna Sisodiya | Lawyer in Bhopal</title>
 
@@ -79,7 +79,7 @@ export default function Contact() {
         <meta name="author" content="Sapna Sisodiya" />
       </Helmet>
 
-      {/* ✅ H1 KEYWORD */}
+      {/* H1 KEYWORD */}
       <h1 className="contact-title">
         Contact Advocate Sapna Sisodiya
       </h1>

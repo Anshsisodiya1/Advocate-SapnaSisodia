@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="home">
 
-      {/* ✅ SEO META TAGS */}
+      {/*  SEO META TAGS */}
       <Helmet>
         <title>Advocate Sapna Sisodia | Best Lawyer in Bhopal | Legal Consultation</title>
 

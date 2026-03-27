@@ -27,7 +27,7 @@ return(
 
 <div className="blog-detail-page">
 
-{/* ✅ DYNAMIC SEO */}
+{/* DYNAMIC SEO */}
 <Helmet>
   <title>
     {blog.metaTitle || `${blog.title} | Advocate Sapna Sisodiya`}
@@ -41,13 +41,13 @@ return(
     }
   />
 
-  {/* ✅ KEYWORDS */}
+  {/* KEYWORDS */}
   <meta
     name="keywords"
     content={`Advocate Sapna Sisodiya, ${blog.title}, lawyer in Bhopal, legal advice, law blog`}
   />
 
-  {/* ✅ OPEN GRAPH (WhatsApp / Facebook share) */}
+  {/* OPEN GRAPH (WhatsApp / Facebook share) */}
   <meta property="og:title" content={blog.title} />
   <meta
     property="og:description"
@@ -58,7 +58,7 @@ return(
 
 <div className="blog-container">
 
-{/* ✅ H1 */}
+{/* H1 */}
 <h1 className="blog-title">
   {blog.title}
 </h1>

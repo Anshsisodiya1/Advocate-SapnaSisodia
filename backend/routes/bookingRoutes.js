@@ -1,24 +1,24 @@
-// const express = require("express");
-// const router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-// const {
-// createBooking,
-// getBookings,
-// updateBookingStatus
-// } = require("../controllers/bookingController");
+const {
+createBooking,
+getBookings,
+updateBookingStatus
+} = require("../controllers/bookingController");
 
-// const authMiddleware = require("../middleware/authMiddleware");
-
-
-// // USER BOOK CONSULTATION
-// router.post("/",createBooking);
+const authMiddleware = require("../middleware/authMiddleware");
 
 
-// // ADMIN VIEW BOOKINGS
-// router.get("/",authMiddleware,getBookings);
+// USER BOOK CONSULTATION
+router.post("/",createBooking);
 
 
-// // ADMIN UPDATE STATUS
-// router.put("/:id",authMiddleware,updateBookingStatus);
+// ADMIN VIEW BOOKINGS
+router.get("/",authMiddleware,getBookings);
 
-// module.exports = router;
+
+// ADMIN UPDATE STATUS
+router.put("/:id",authMiddleware,updateBookingStatus);
+
+module.exports = router;
