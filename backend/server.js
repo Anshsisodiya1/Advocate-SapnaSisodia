@@ -13,14 +13,13 @@ const app = express();
 // Connect Database
 connectDB();
 
-// Middleware
-const cors = require("cors");
+app.use(express.json());
 
+// Middleware
 app.use(cors({
   origin: "https://advocate-sapna-sisodia.vercel.app",
   credentials: true
 }));
-app.use(express.json());
 app.use(helmet());
 app.use(morgan('dev'));
 
