@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 import "../styles/Contact.css";
 
 /* SEO */
@@ -8,6 +7,9 @@ import { Helmet } from "react-helmet-async";
 /* React Icons */
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { MdAccessTime } from "react-icons/md";
+
+/* ✅ Import API function */
+import { sendInquiry } from "../services/api";
 
 export default function Contact() {
 
@@ -35,10 +37,8 @@ export default function Contact() {
     try{
       setLoading(true);
 
-      await axios.post(
-        "http://localhost:5000/api/inquiries",
-        formData
-      );
+      // ✅ FIXED: using API file (no localhost)
+      await sendInquiry(formData);
 
       setSuccess("Your inquiry has been submitted successfully.");
 
@@ -79,7 +79,6 @@ export default function Contact() {
         <meta name="author" content="Sapna Sisodiya" />
       </Helmet>
 
-      {/* H1 KEYWORD */}
       <h1 className="contact-title">
         Contact Advocate Sapna Sisodiya
       </h1>
@@ -87,7 +86,6 @@ export default function Contact() {
       <div className="contact-wrapper">
 
         {/* FORM */}
-
         <form onSubmit={handleSubmit} className="contact-form">
 
           <input
@@ -141,9 +139,7 @@ export default function Contact() {
 
         </form>
 
-
         {/* CONTACT INFO */}
-
         <div className="contact-info">
 
           <h2>Office Information – Advocate Sapna Sisodia</h2>
