@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Blog = require("../models/Blog");
 
-router.get("/sitemap.xml", async (req, res) => {
+// GET /sitemap/ -> serves sitemap.xml
+router.get("/", async (req, res) => {
   try {
     const blogs = await Blog.find();
-
     const baseUrl = process.env.BASE_URL || "http://localhost:5000";
 
     let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -13,26 +13,11 @@ router.get("/sitemap.xml", async (req, res) => {
 
     // Static Pages
     sitemap += `
-<url>
-<loc>${baseUrl}/</loc>
-</url>
-
-<url>
-<loc>${baseUrl}/about</loc>
-</url>
-
-<url>
-<loc>${baseUrl}/services</loc>
-</url>
-
-<url>
-<loc>${baseUrl}/blog</loc>
-</url>
-
-<url>
-<loc>${baseUrl}/contact</loc>
-</url>
-`;
+<url><loc>${baseUrl}/</loc></url>
+<url><loc>${baseUrl}/about</loc></url>
+<url><loc>${baseUrl}/services</loc></url>
+<url><loc>${baseUrl}/blog</loc></url>
+<url><loc>${baseUrl}/contact</loc></url>`;
 
     // Dynamic Blog Pages
     blogs.forEach((blog) => {
@@ -40,8 +25,7 @@ router.get("/sitemap.xml", async (req, res) => {
 <url>
 <loc>${baseUrl}/blog/${blog.slug}</loc>
 <lastmod>${blog.updatedAt.toISOString()}</lastmod>
-</url>
-`;
+</url>`;
     });
 
     sitemap += `</urlset>`;
