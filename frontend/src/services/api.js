@@ -17,7 +17,7 @@ export const sendContact = (data) => API.post("/contacts/contact", data);
 // INQUIRY
 // =============================
 
-export const sendInquiry = (data) => API.post("/inquiry", data);
+export const sendInquiry = (data) => API.post("/inquiries", data);
 
 // =============================
 // BOOKING
