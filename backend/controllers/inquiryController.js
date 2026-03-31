@@ -1,4 +1,4 @@
-const Inquiry = require("../models/inquiry");
+const Inquiry = require("../models/Inquiry");
 const transporter = require("../config/email"); // make sure this is properly configured
 
 exports.submitInquiry = async (req, res) => {

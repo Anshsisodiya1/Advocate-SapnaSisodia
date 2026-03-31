@@ -2,29 +2,17 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://advocate-backend-vmau.onrender.com/api",
+  baseURL: "https://advocate-sapna-backend.onrender.com/api",
 });
 
-export default API;
+// CONTACT (fix after checking route file)
+export const sendContact = (data) => API.post("/contacts", data);
 
-// =============================
-// CONTACT
-// =============================
-
-export const sendContact = (data) => API.post("/contacts/contact", data);
-
-// =============================
-// INQUIRY
-// =============================
-
+// INQUIRY ✅ correct already
 export const sendInquiry = (data) => API.post("/inquiries", data);
 
-// =============================
-// BOOKING
-// =============================
-
-export const createBooking = (data) => API.post("/booking", data);
-
+// BOOKING ❗ fix here
+export const createBooking = (data) => API.post("/bookings", data);
 // =============================
 // BLOGS (PUBLIC)
 // =============================
