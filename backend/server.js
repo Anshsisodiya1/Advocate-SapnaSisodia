@@ -15,8 +15,13 @@ const app = express();
 // Connect to Database
 connectDB();
 
-// Middleware
+// ===============================
+// ✅ MIDDLEWARE
+// ===============================
+
 app.use(express.json());
+
+// ✅ CORS FIX (Production Safe)
 const allowedOrigins = [
   "http://localhost:5173",
   "https://advocate-sapna-sisodia.vercel.app"
@@ -24,31 +29,40 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
-    // allow requests with no origin (like Postman)
+    // Allow requests with no origin (Postman, mobile apps)
     if (!origin) return callback(null, true);
 
     if (allowedOrigins.includes(origin)) {
-      callback(null, true);
+      return callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      return callback(new Error("Not allowed by CORS"));
     }
   },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+// ✅ Handle preflight requests
+app.options("*", cors());
+
 app.use(helmet());
 app.use(morgan('dev'));
 
-// Rate limiter middleware
+// ===============================
+// ✅ RATE LIMITER
+// ===============================
 const limiter = require("./middleware/rateLimiter");
-if (typeof limiter === 'function') { 
-    app.use(limiter); 
+
+if (typeof limiter === 'function') {
+  app.use(limiter);
 } else {
-    console.warn("Rate limiter is not a valid function. Skipping...");
+  console.warn("Rate limiter is not a valid function. Skipping...");
 }
 
-// Routes
+// ===============================
+// ✅ ROUTES
+// ===============================
 const contactRoutes = require('./routes/contactRoutes');
 const authRoutes = require("./routes/authRoutes");
 const blogRoutes = require("./routes/blogRoutes");
@@ -61,46 +75,54 @@ const adminRoutes = require("./routes/adminRoutes");
 const sitemapRoutes = require("./routes/sitemapRoutes");
 const robotsRoutes = require("./routes/robotsRoutes");
 
-// Use routes safely
+// Route list
 const routes = [
-    { path: '/api/contacts', router: contactRoutes },
-    { path: '/api/admin/auth', router: authRoutes },
-    { path: '/api/blogs', router: blogRoutes },
-    { path: '/api/bookings', router: bookingRoutes },
-    { path: '/api/inquiries', router: inquiryRoutes },
-    { path: '/api/whatsapp', router: whatsappRoutes },
-    { path: '/api/dashboard', router: dashboardRoutes },
-    { path: '/api/seo', router: seoRoutes },
-    { path: '/api/admin', router: adminRoutes },
-    { path: '/sitemap', router: sitemapRoutes },
-    { path: '/robots', router: robotsRoutes },
+  { path: '/api/contacts', router: contactRoutes },
+  { path: '/api/admin/auth', router: authRoutes },
+  { path: '/api/blogs', router: blogRoutes },
+  { path: '/api/bookings', router: bookingRoutes },
+  { path: '/api/inquiries', router: inquiryRoutes },
+  { path: '/api/whatsapp', router: whatsappRoutes },
+  { path: '/api/dashboard', router: dashboardRoutes },
+  { path: '/api/seo', router: seoRoutes },
+  { path: '/api/admin', router: adminRoutes },
+  { path: '/sitemap', router: sitemapRoutes },
+  { path: '/robots', router: robotsRoutes },
 ];
 
-// Validate each router before using
+// Validate and use routes
 routes.forEach(r => {
-    if (r.router && typeof r.router === 'function') {
-        app.use(r.path, r.router);
-    } else {
-        console.warn(`Route at path "${r.path}" is not a valid router. Skipping.`);
-    }
+  if (r.router && typeof r.router === 'function') {
+    app.use(r.path, r.router);
+  } else {
+    console.warn(`Route at path "${r.path}" is not a valid router. Skipping.`);
+  }
 });
 
-// Test route
+// ===============================
+// ✅ TEST ROUTE
+// ===============================
 app.get('/', (req, res) => {
-    res.send('API is running...');
+  res.send('API is running...');
 });
 
-// Global error handler
+// ===============================
+// ✅ GLOBAL ERROR HANDLER
+// ===============================
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({
-        success: false,
-        message: err.message
-    });
+  console.error("🔥 ERROR:", err.message);
+
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || "Internal Server Error"
+  });
 });
 
-// Start server
+// ===============================
+// ✅ START SERVER
+// ===============================
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
